@@ -70,33 +70,33 @@ def main():
 			clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity','state'])
 			st.dataframe(clean_df)
 
-		elif(len(filterbycategory)!=0) and (filterbyprice > 0):
+		elif(len(filterbycategory)!=0) & (filterbyprice > 0):
 			result2 = filter_4category(filterbycategory, filterbyprice)
 			clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity'])
 			st.dataframe(clean_df)
 
-		elif(len(filterbycategory)!=0) and (len(filterbystate) != 0):
+		elif(len(filterbycategory)!=0) & (filterbystate != 0):
 			result2 = filter_5category(filterbycategory, filterbystate)
 			clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity','state'])
 			st.dataframe(clean_df)
 
-		elif(filterbyprice > 0) and (len(filterbystate) != 0):
+		elif(filterbyprice > 0) & (len(filterbystate)!=0):
 			result2 = filter_6category(filterbyprice, filterbystate)
 			clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity','state'])
 			st.dataframe(clean_df)
-		
+
 		else:
 			if(len(filterbycategory)!=0):
 				result2 = filter_category(filterbycategory)
 				clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity'])
 				st.dataframe(clean_df)
 		
-			elif(filterbyprice > 0):
+			if(filterbyprice > 0):
 				result2 = filter_price(filterbyprice)
 				clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity'])
 				st.dataframe(clean_df)
 			
-			elif(len(filterbystate)!=0):
+			if(len(filterbystate)!=0):
 				result2 = filter_state(filterbystate)
 				clean_df = pd.DataFrame(result2,columns=['product_name', 'product_type', 'price', 'quantity','state'])
 				st.dataframe(clean_df)        

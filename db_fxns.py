@@ -74,12 +74,6 @@ def view_buyer_data():
 	data = c.fetchall()
 	return data
 
-# def filter_category(filter):
-# 	fstr = f"SELECT product_name, product_type, price, quantity FROM products WHERE product_type = '{filter}';"
-# 	c.execute(fstr)
-# 	data = c.fetchall()
-# 	return data
-
 def filter_category(filter):
 	fstr = f"SELECT product_name, product_type, price, quantity FROM products WHERE product_type = '{filter}';"
 	c.execute(fstr)
